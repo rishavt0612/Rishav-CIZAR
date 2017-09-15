@@ -1,0 +1,74 @@
++++++++++++
+Python News
++++++++++++
+
+What's New in Python 3.4.3?
+===========================
+
+Release date: 2015-02-23
+
+Core and Builtins
+-----------------
+
+- Issue #22735: Fix many edge cases (including crashes) involving custom mro()
+  implementations.
+
+- Issue #22896: Avoid using PyObject_AsCharBuffer(), PyObject_AsReadBuffer()
+  and PyObject_AsWriteBuffer().
+
+- Issue #21295: Revert some changes (issue #16795) to AST line numbers and
+  column offsets that constituted a regression.
+
+- Issue #21408: The default __ne__() now returns NotImplemented if __eq__()
+  returned NotImplemented.  Original patch by Martin Panter.
+
+- Issue #23321: Fixed a crash in str.decode() when error handler returned
+  replacment string longer than mailformed input data.
+
+- Issue #23048: Fix jumping out of an infinite while loop in the pdb.
+
+- Issue #20335: bytes constructor now raises TypeError when encoding or errors
+  is specified with non-string argument.  Based on patch by Renaud Blanch.
+
+- Issue #22335: Fix crash when trying to enlarge a bytearray to 0x7fffffff
+  bytes on a 32-bit platform.
+
+- Issue #22653: Fix an assertion failure in debug mode when doing a reentrant
+  dict insertion in debug mode.
+
+- Issue #22643: Fix integer overflow in Unicode case operations (upper, lower,
+  title, swapcase, casefold).
+
+- Issue #22604: Fix assertion error in debug mode when dividing a complex
+  number by (nan+0j).
+
+- Issue #22470: Fixed integer overflow issues in "backslashreplace",
+  "xmlcharrefreplace", and "surrogatepass" error handlers.
+
+- Issue #22520: Fix overflow checking when generating the repr of a unicode
+  object.
+
+- Issue #22519: Fix overflow checking in PyBytes_Repr.
+
+- Issue #22518: Fix integer overflow issues in latin-1 encoding.
+
+- Issue #23165: Perform overflow checks before allocating memory in the
+  _Py_char2wchar function.
+
+Library
+-------
+
+- Issue #23399: pyvenv creates relative symlinks where possible.
+
+- Issue #23099: Closing io.BytesIO with exported buffer is rejected now to
+  prevent corrupting exported buffer.
+
+- Issue #23363: Fix possible overflow in itertools.permutations.
+
+- Issue #23364: Fix possible overflow in itertools.product.
+
+- Issue #23366: Fixed possible integer overflow in itertools.combinations.
+
+- Issue #23366: Fixed possible integer overflow in itertools.combinations.
+
+- Issue #23369: Fixed possible integer overflow in
